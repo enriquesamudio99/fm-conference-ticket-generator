@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Conference ticket generator</title>
+
+  <link rel="stylesheet" href="./assets/styles/styles.css">
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="header__container container">
+      <nav class="navbar">
+        <div class="navbar__container">
+          <a href="#" class="navbar__brand">
+            <img src="./assets/images/logo-full.svg" alt="Logo" class="navbar__brand-img">
+          </a>
+        </div>
+      </nav>
+      <div class="hero">
+        <div class="hero__container">
+          <div class="hero__content">
+            <h1 class="hero__title" id="hero-title">Your Journey to Coding Conf 2025 Starts Here!</h1>
+            <p class="hero__subtitle" id="hero-subtitle">Secure your spot at next year's biggest coding conference.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <form class="form">
+      <div class="form__container container">
+        <div class="form__groups">
+          <div class="form__upload upload">
+            <label class="upload__label" for="avatar">Upload Avatar</label>
+            <label for="avatar" class="upload__dropzone">
+              <input type="file" id="avatar" class="upload__input" accept=".jpg, .jpeg, .png" hidden />
+              <div class="upload__icon-container">
+                <img src="./assets/images/icon-upload.svg" alt="Upload Icon" class="upload__icon">
+              </div>
+              <p class="upload__text">Drag and drop or click to upload</p>
+            </label>
+            <div class="upload__info">
+              <svg class="upload__info-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none"
+                viewBox="0 0 16 16">
+                <path stroke="#D1D0D5" stroke-linecap="round" stroke-linejoin="round"
+                  d="M2 8a6 6 0 1 0 12 0A6 6 0 0 0 2 8Z" />
+                <path fill="#D1D0D5" d="M8.004 10.462V7.596ZM8 5.57v-.042Z" />
+                <path stroke="#D1D0D5" stroke-linecap="round" stroke-linejoin="round"
+                  d="M8.004 10.462V7.596M8 5.569v-.042" />
+              </svg>
+              <p class="upload__info-text">Upload your photo (JPG or PNG, max size: 500KB).</p>
+            </div>
+          </div>
+          <div class="form__group">
+            <label for="full-name" class="form__label">Full Name</label>
+            <input id="full-name" type="text" class="form__input">
+          </div>
+          <div class="form__group">
+            <label for="email" class="form__label">Email Address</label>
+            <input id="email" type="text" class="form__input" placeholder="example@email.com">
+          </div>
+          <div class="form__group">
+            <label for="username" class="form__label">GitHub Username</label>
+            <input id="username" type="text" class="form__input" placeholder="@yourusername">
+          </div>
+        </div>
+        <button class="form__button button">Generate My Ticket</button>
+      </div>
+    </form>
+  </main>
+
+  <!-- Form starts -->
+
+  <!-- Upload Avatar
+  Drag and drop or click to upload
+  Upload your photo (JPG or PNG, max size: 500KB). -->
+
+  <!-- Form ends -->
+
+  <!-- Generated tickets starts -->
+
+  <!-- Congrats, Enrique! Your ticket is ready.
+
+  We've emailed your ticket to enrique@email.com and will send updates in the run up to the event.
+
+  Coding Conf
+  Jan 31, 2025 / Austin, TX -->
+
+  <!-- Generated tickets ends -->
+
+  <script src="./assets/scripts/app.js"></script>
+</body>
+
+</html>

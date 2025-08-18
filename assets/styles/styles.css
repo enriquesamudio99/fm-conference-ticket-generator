@@ -1,0 +1,329 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
+
+:root {
+  /* Font Families */
+  --ff-inconsolata: 'Inconsolata', monospace;
+
+  /* Colors */
+  --clr-neutral-0: #FFFFFF;
+  --clr-neutral-300: #D1D0D5;
+  --clr-neutral-500: #8784A5;
+  --clr-neutral-700: #4B4869;
+  --clr-neutral-900: #0D082D;
+  --clr-orange-500: #F57463;
+  --clr-orange-700: #E1604F;
+
+  /* Gradients */
+  --gradient-one: linear-gradient(90deg, #F37362 0%, #FFF 100%);
+
+  /* Text Presets */
+  --txt-preset-1: 800 3.75rem / 1.1 var(--ff-inconsolata);
+  --txt-preset-1-mobile: 800 1.875rem / 1.1 var(--ff-inconsolata);
+  --txt-preset-2: 700 2.5rem / 1.1 var(--ff-inconsolata);
+  --txt-preset-2-mobile: 700 1.5rem / 1.1 var(--ff-inconsolata);
+  --txt-preset-3: 500 1.875rem / 1.1 var(--ff-inconsolata);
+  --txt-preset-3-mobile: 500 1.375rem / 1.1 var(--ff-inconsolata);
+  --txt-preset-4: 500 1.5rem / 1.2 var(--ff-inconsolata);
+  --txt-preset-4-mobile: 500 1.25rem / 1.2 var(--ff-inconsolata);
+  --txt-preset-5: 500 1.25rem / 1.2 var(--ff-inconsolata);
+  --txt-preset-5-extrabold: 800 1.25rem / 1 var(--ff-inconsolata);
+  --txt-preset-6: 400 1.125rem / 1.2 var(--ff-inconsolata);
+  --txt-preset-6-mobile: 400 .875rem / 1.2 var(--ff-inconsolata);
+  --txt-preset-7: 400 .75rem / 1.2 var(--ff-inconsolata);
+}
+
+/* Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+html,
+body {
+  position: relative;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin-block-end: 0;
+}
+
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+body {
+  min-height: 100vh;
+  font-size: 1rem;
+  line-height: 1.5;
+  font: var(--txt-preset-6);
+  background-color: var(--clr-neutral-900);
+  color: var(--clr-neutral-0);
+  background-image: url("../images/background-mobile.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button,
+input,
+label {
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  background-color: none;
+  border: none;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  appearance: textfield;
+}
+
+button {
+  cursor: pointer;
+}
+
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+:target {
+  scroll-margin-block: 5ex;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  background-color: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+/* End Reset */
+
+/* Globals */
+.container {
+  width: calc(100% - 2rem);
+  margin-inline: auto;
+}
+
+@media (min-width: 48rem) {
+  .container {
+    max-width: 44.0625rem;
+  }
+}
+
+@media (min-width: 62rem) {
+  .container {
+    max-width: 55.6875rem;
+  }
+}
+
+.form {
+  margin-bottom: 7.125rem;
+}
+
+.form__container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+@media (min-width: 48rem) {
+  .form__container {
+    max-width: 32.625rem;
+  }
+}
+
+@media (min-width: 62rem) {
+  .form__container {
+    max-width: 28.75rem;
+  }
+}
+
+.form__groups {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.form__group {
+  display: grid;
+  gap: .75rem;
+}
+
+.form__label {
+  font: var(--txt-preset-5);
+  letter-spacing: -0.5px;
+}
+
+.form__input {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.08);
+  font: var(--txt-preset-6);
+  color: var(--clr-neutral-0);
+  padding: .9375rem;
+  border: .0625rem solid var(--clr-neutral-500);
+  border-radius: .75rem;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.form__input::placeholder {
+  color: var(--clr-neutral-300);
+}
+
+.upload {
+  display: grid;
+  gap: .75rem;
+}
+
+.upload__label {
+  font: var(--txt-preset-5);
+  letter-spacing: -0.5px;
+}
+
+.upload__dropzone {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.125rem .9375rem;
+  border: .0625rem dashed var(--clr-neutral-500);
+  border-radius: .75rem;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  cursor: pointer;
+}
+
+.upload__icon-container {
+  background-color: rgba(255, 255, 255, 0.1);
+  width: 3.125rem;
+  height: 3.125rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: .75rem;
+  border: .0625rem solid var(--clr-neutral-700);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  box-shadow: 0 .125rem .25rem -0.125rem #040128;
+}
+
+.upload__text {
+  font: var(--txt-preset-6);
+  color: var(--clr-neutral-300);
+}
+
+.upload__info {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  font: var(--txt-preset-7);
+  letter-spacing: -0.2px;
+  color: var(--clr-neutral-300);
+}
+
+.button {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  padding: 1.0625rem;
+  font: var(--txt-preset-5-extrabold);
+  letter-spacing: -0.3px;
+  background-color: var(--clr-orange-500);
+  border-radius: .75rem;
+  color: var(--clr-neutral-900);
+}
+
+/* End Globals */
+.navbar__container {
+  padding-top: 2.0625rem;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar__brand {
+  height: 1.5rem;
+}
+
+.navbar__brand-img {
+  width: 100%;
+  height: 100%;
+}
+
+.hero__container {
+  padding: 2.5rem 0;
+}
+
+.hero__content {
+  text-align: center;
+}
+
+.hero__title {
+  font: var(--txt-preset-1-mobile);
+  letter-spacing: -1px;
+}
+
+.hero__subtitle {
+  margin-top: 1.25rem;
+  font: var(--txt-preset-4-mobile);
+  letter-spacing: -0.5px;
+  color: var(--clr-neutral-300);
+}
+
