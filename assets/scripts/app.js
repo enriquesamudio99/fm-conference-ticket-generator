@@ -37,6 +37,11 @@ const initApp = () => {
   avatarInput.addEventListener("change", generateAvatar);
   removeBtn.addEventListener("click", removeAvatar);
   changeBtn.addEventListener("click", changeAvatar);
+
+  // Drag and Drop
+  uploadDropzone.addEventListener("dragover", handleDragOver);
+  uploadDropzone.addEventListener("dragleave", handleDragLeave);
+  uploadDropzone.addEventListener("drop", handleDrop);
 }
 
 const handleSubmit = (e) => {
@@ -200,4 +205,35 @@ const removeAvatar = () => {
 
 const changeAvatar = () => {
   avatarInput.click();
+}
+
+const handleDragOver = (e) => {
+  e.preventDefault();
+  uploadDropzone.classList.add("upload__dropzone--dragover");
+}
+
+const handleDragLeave = (e) => {
+  e.preventDefault();
+  uploadDropzone.classList.remove("upload__dropzone--dragover");
+}
+
+const handleDrop = (e) => {
+  e.preventDefault();
+  uploadDropzone.classList.remove("upload__dropzone--dragover");
+  const avatarFile = e.dataTransfer.files[0];
+
+  if (!avatarFile) {
+    return;
+  }
+
+  const imageURL = URL.createObjectURL(avatarFile);
+  previewImg.src = imageURL;
+  uploadDropzone.style.display = "none";
+  uploadPreview.style.display = "flex";
+
+  state.avatar = imageURL;
+
+  const dataTransfer = new DataTransfer();
+  dataTransfer.items.add(avatarFile);
+  avatarInput.files = dataTransfer.files;
 }

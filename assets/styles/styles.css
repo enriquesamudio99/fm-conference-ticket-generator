@@ -280,6 +280,10 @@ ul, ol {
   background-color: rgba(255, 255, 255, 0.2);
 }
 
+.upload__dropzone--dragover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
 .upload__icon-container {
   background-color: rgba(255, 255, 255, 0.1);
   width: 3.125rem;
