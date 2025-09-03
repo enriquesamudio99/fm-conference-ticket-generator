@@ -17,6 +17,9 @@
 
   <header class="header">
     <div class="header__container container">
+      <img src="./assets/images/pattern-squiggly-line-top.svg" alt="Squiggly Pattern" class="header__pattern-top">
+      <img src="./assets/images/pattern-circle.svg" alt="Circle Pattern" class="header__pattern-circle-right">
+      <img src="./assets/images/pattern-circle.svg" alt="Circle Pattern" class="header__pattern-circle-left">
       <nav class="navbar">
         <div class="navbar__container">
           <a href="#" class="navbar__brand">
@@ -36,85 +39,87 @@
   </header>
 
   <main class="main">
-    <section class="form-section" id="form-section">
-      <form class="form">
-        <div class="form__container container">
-          <div class="form__groups">
-            <div class="form__upload upload">
-              <label class="upload__label" for="avatar">Upload Avatar</label>
-              <label for="avatar" class="upload__dropzone" id="upload-dropzone">
-                <input type="file" id="avatar" class="upload__input" accept=".jpg, .jpeg, .png" hidden />
-                <div class="upload__icon-container">
-                  <img src="./assets/images/icon-upload.svg" alt="Upload Icon" class="upload__icon">
+    <div class="main__container container">
+      <section class="form-section" id="form-section">
+        <form class="form">
+          <div class="form__container">
+            <div class="form__groups">
+              <div class="form__upload upload">
+                <label class="upload__label" for="avatar">Upload Avatar</label>
+                <label for="avatar" class="upload__dropzone" id="upload-dropzone">
+                  <input type="file" id="avatar" class="upload__input" accept=".jpg, .jpeg, .png" hidden />
+                  <div class="upload__icon-container">
+                    <img src="./assets/images/icon-upload.svg" alt="Upload Icon" class="upload__icon">
+                  </div>
+                  <p class="upload__text">Drag and drop or click to upload</p>
+                </label>
+                <div class="upload__preview" id="upload-preview">
+                  <img src="./assets/images/image-avatar.jpg" id="preview-img" alt="Preview Image" class="upload__preview-img">
+                  <div class="upload__preview-cta">
+                    <button type="button" class="upload__preview-btn upload__preview-btn--remove" id="remove-btn">Remove Image</button>
+                    <button type="button" class="upload__preview-btn upload__preview-btn--change" id="change-btn">Change Image</button>
+                  </div>
                 </div>
-                <p class="upload__text">Drag and drop or click to upload</p>
-              </label>
-              <div class="upload__preview" id="upload-preview">
-                <img src="./assets/images/image-avatar.jpg" id="preview-img" alt="Preview Image" class="upload__preview-img">
-                <div class="upload__preview-cta">
-                  <button type="button" class="upload__preview-btn upload__preview-btn--remove" id="remove-btn">Remove Image</button>
-                  <button type="button" class="upload__preview-btn upload__preview-btn--change" id="change-btn">Change Image</button>
+                <div class="upload__info">
+                  <img src="./assets/images/icon-info.svg" alt="Info Icon" class="upload__info-icon">
+                  <p class="upload__info-text">Upload your photo (JPG or PNG, max size: 500KB).</p>
                 </div>
               </div>
-              <div class="upload__info">
-                <img src="./assets/images/icon-info.svg" alt="Info Icon" class="upload__info-icon">
-                <p class="upload__info-text">Upload your photo (JPG or PNG, max size: 500KB).</p>
+              <div class="form__group">
+                <label for="full-name" class="form__label">Full Name</label>
+                <input id="full-name" type="text" class="form__input">
+                <div class="form__error">
+                  <img src="./assets/images/icon-warning.svg" alt="Warning Icon" class="form__error-icon">
+                  <p class="form__error-text"></p>
+                </div>
+              </div>
+              <div class="form__group">
+                <label for="email" class="form__label">Email Address</label>
+                <input id="email" type="text" class="form__input" placeholder="example@email.com">
+                <div class="form__error">
+                  <img src="./assets/images/icon-warning.svg" alt="Warning Icon" class="form__error-icon">
+                  <p class="form__error-text"></p>
+                </div>
+              </div>
+              <div class="form__group">
+                <label for="username" class="form__label">GitHub Username</label>
+                <input id="username" type="text" class="form__input" placeholder="@yourusername">
+                <div class="form__error">
+                  <img src="./assets/images/icon-warning.svg" alt="Warning Icon" class="form__error-icon">
+                  <p class="form__error-text"></p>
+                </div>
               </div>
             </div>
-            <div class="form__group">
-              <label for="full-name" class="form__label">Full Name</label>
-              <input id="full-name" type="text" class="form__input">
-              <div class="form__error">
-                <img src="./assets/images/icon-warning.svg" alt="Warning Icon" class="form__error-icon">
-                <p class="form__error-text"></p>
-              </div>
-            </div>
-            <div class="form__group">
-              <label for="email" class="form__label">Email Address</label>
-              <input id="email" type="text" class="form__input" placeholder="example@email.com">
-              <div class="form__error">
-                <img src="./assets/images/icon-warning.svg" alt="Warning Icon" class="form__error-icon">
-                <p class="form__error-text"></p>
-              </div>
-            </div>
-            <div class="form__group">
-              <label for="username" class="form__label">GitHub Username</label>
-              <input id="username" type="text" class="form__input" placeholder="@yourusername">
-              <div class="form__error">
-                <img src="./assets/images/icon-warning.svg" alt="Warning Icon" class="form__error-icon">
-                <p class="form__error-text"></p>
-              </div>
-            </div>
+            <button class="form__button button">Generate My Ticket</button>
           </div>
-          <button class="form__button button">Generate My Ticket</button>
+        </form>
+      </section>
+      <section class="ticket" id="section-ticket">
+        <div class="ticket__container">
+          <div class="ticket__content">
+            <img src="./assets/images/pattern-ticket.svg" alt="Pattern" class="ticket__pattern">
+            <div class="ticket__info">
+              <img src="./assets/images/logo-mark.svg" alt="Logo" class="ticket__logo">
+              <div class="ticket__data">
+                <h2 class="ticket__title">Coding Conf</h2>
+                <p class="ticket__subtitle">Jan 31, 2025 / Austin, TX</p>
+              </div>
+            </div>
+            <div class="ticket__user">
+              <img src="./assets/images/image-avatar.jpg" id="ticket-avatar" alt="Avatar" class="ticket__user-avatar">
+              <div class="ticket__user-info">
+                <h2 class="ticket__user-name" id="ticket-name">Jonatan Kristof</h2>
+                <p class="ticket__user-username">
+                  <img src="./assets/images/icon-github.svg" alt="Github" class="ticket__user-username-icon">
+                  <span class="ticket__user-username-span" id="ticket-username">@jonatankristof0101</span>
+                </p>
+              </div>
+            </div>
+            <p class="ticket__number" id="ticket-number">#01609</p>
+          </div>
         </div>
-      </form>
-    </section>
-    <section class="ticket" id="section-ticket">
-      <div class="ticket__container container">
-        <div class="ticket__content">
-          <img src="./assets/images/pattern-ticket.svg" alt="Pattern" class="ticket__pattern">
-          <div class="ticket__info">
-            <img src="./assets/images/logo-mark.svg" alt="Logo" class="ticket__logo">
-            <div class="ticket__data">
-              <h2 class="ticket__title">Coding Conf</h2>
-              <p class="ticket__subtitle">Jan 31, 2025 / Austin, TX</p>
-            </div>
-          </div>
-          <div class="ticket__user">
-            <img src="./assets/images/image-avatar.jpg" id="ticket-avatar" alt="Avatar" class="ticket__user-avatar">
-            <div class="ticket__user-info">
-              <h2 class="ticket__user-name" id="ticket-name">Jonatan Kristof</h2>
-              <p class="ticket__user-username">
-                <img src="./assets/images/icon-github.svg" alt="Github" class="ticket__user-username-icon">
-                <span class="ticket__user-username-span" id="ticket-username">@jonatankristof0101</span>
-              </p>
-            </div>
-          </div>
-          <p class="ticket__number" id="ticket-number">#01609</p>
-        </div>
-      </div>
-    </section>
+      </section>
+    </div>
   </main>
 
   <script src="./assets/scripts/app.js"></script>
